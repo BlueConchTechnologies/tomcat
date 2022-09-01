@@ -11,7 +11,7 @@ steps:
    args:
     - '-c'
     - |
-      sudo wget https://github.com/zricethezav/gitleaks/releases/download/v8.8.4/gitleaks_8.8.4_linux_x64.tar.gz'
+      docker pull hub.docker.com/r/zricethezav/gitleaks
 # Build a docker image
  - name: 'gcr.io/cloud-builders/docker'
    args: [ 'build', '-t', 'gcr.io/devops-pod/tomcat', '--cache-from', 'gcr.io/devops-pod/tomcat', '.' ]
