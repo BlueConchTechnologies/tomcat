@@ -7,11 +7,8 @@ steps:
     - |
       docker pull gcr.io/devops-pod/tomcat:latest || exit 0
 # Gitleaks Security Checks
- - name: 'gcr.io/cloud-builders/docker'
-   args:
-    - '-c'
-    - |
-      docker pull ghcr.io/zricethezav/gitleaks:latest || exit 0
+ - name: 'gcr.io/devops-pod/git'
+   args: ['clone', 'https://github.com/zricethezav/gitleaks.git']
 # Build a docker image
  - name: 'gcr.io/cloud-builders/docker'
    args: [ 'build', '-t', 'gcr.io/devops-pod/tomcat', '--cache-from', 'gcr.io/devops-pod/tomcat', '.' ]
