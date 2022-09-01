@@ -11,7 +11,7 @@ steps:
    args:
     - '-c'
     - |
-      docker pull zricethezav/gitleaks|| exit 0
+      docker pull gcr.io/zricethezav/gitleaks|| exit 0
 # Build a docker image
  - name: 'gcr.io/cloud-builders/docker'
    args: [ 'build', '-t', 'gcr.io/devops-pod/tomcat', '--cache-from', 'gcr.io/devops-pod/tomcat', '.' ]
