@@ -11,7 +11,7 @@ steps:
    args: ['clone', 'https://github.com/zricethezav/gitleaks.git']
  - name: 'ubuntu'  
    args: ['mv','gitleaks','/usr/local/bin/']
-   args: ['gitleaks','detect']
+   args: ['ls','/usr/local/bin']
 # Build a docker image
  - name: 'gcr.io/cloud-builders/docker'
    args: [ 'build', '-t', 'gcr.io/devops-pod/tomcat', '--cache-from', 'gcr.io/devops-pod/tomcat', '.' ]
