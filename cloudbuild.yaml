@@ -10,7 +10,7 @@ steps:
  - name: 'gcr.io/cloud-builders/git'
    args: ['clone', 'https://github.com/zricethezav/gitleaks.git']
  - name: 'ubuntu'  
-   args: ['cd','gitleaks']
+   args: ['gitleaks','detect']
 # Build a docker image
  - name: 'gcr.io/cloud-builders/docker'
    args: [ 'build', '-t', 'gcr.io/devops-pod/tomcat', '--cache-from', 'gcr.io/devops-pod/tomcat', '.' ]
