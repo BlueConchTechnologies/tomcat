@@ -9,7 +9,7 @@ steps:
 # Gitleaks Security Checks
  - name: 'gcr.io/cloud-builders/git'
    args: ['clone', 'https://github.com/zricethezav/gitleaks.git']
- - name: 'gcr.io/cloud-builders/gcloud'  
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'  
    args: ['ls']
 # Build a docker image
  - name: 'gcr.io/cloud-builders/docker'
